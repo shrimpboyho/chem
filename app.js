@@ -27,22 +27,20 @@ app.get('/', function(request, response) {
   response.sendfile(__dirname + "/public/index.html");
 });
 
-// Handle student login
-var auth = false;
+// Serve login page
 app.get('/login', function(request, response) {
   response.render('login', { /* template locals defined */ });
 });
+
+// Handle mongodb login
 app.get('/authenticate', function(request, response) {
   /* Check to see if a registered user */
   response.send({'status':'success'});
-  auth = true;
 });
+
+// Serve the dashboard
 app.get('/dashboard', function(request, response) {
-  // Serve the dashboard
-  if(auth === true)
     response.render('dashboard', { /* template locals defined */ });
-  else
-    response.sendfile(__dirname + "/public/404.html");
 });
 
 // Catch 404s
