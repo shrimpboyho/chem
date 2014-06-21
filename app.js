@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var url = require('url');
 var https = require('https');
-var requestify = require('requestify');
 
 // Configure static
 app.configure(function() {
