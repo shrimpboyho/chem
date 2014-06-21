@@ -18,7 +18,7 @@ app.configure(function() {
 
 // Initially server index
 app.get('/', function(request, response) {
-  response.sendfile(__dirname + "/public/login.html");
+  response.sendfile(__dirname + "/public/index.html");
 });
 
 // Catch 404s
