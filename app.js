@@ -34,6 +34,7 @@ app.get('/login', function(request, response) {
 
 // Handle mongodb login
 app.get('/authenticate', function(request, response) {
+  console.log(request.query);
   /* Check to see if a registered user */
   response.send({'status':'success'});
 });
