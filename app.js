@@ -44,6 +44,14 @@ app.get('/dashboard', function(request, response) {
     response.render('dashboard', { /* template locals defined */ });
 });
 
+// Handle serving any dashboard content
+app.get('/getcontent', function(request, response) {
+  var contentName = request.query.contentName;
+  console.log("Serving the following chem content: " + contentName);
+  // Find the content from the database and serve it
+  response.send("Content and Stuff");
+});
+
 // Catch 404s
 app.get('*', function(req, res) {
   res.sendfile(__dirname + "/public/404.html");
